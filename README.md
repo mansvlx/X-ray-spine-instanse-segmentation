@@ -13,7 +13,7 @@
 Для поиска датасетов были использванны следующие ресурсы:
 - [Roboflow](https://roboflow.com/)
 - [Kaggle](https://www.kaggle.com/)
-- [Hugging Face](https://huggingface.co/)
+- [Hugging Face](httoips://huggingface.co/)
 
 На Roboflow были найдены 2 датасета с подходящими данными:
 - [Scoliosis Computer Vision Dataset](https://universe.roboflow.com/mimitlab/scoliosis-gnlbf)
@@ -41,7 +41,7 @@
 |          Mask2Former                 |    State-of-the-art   |   Средняя/низкая  |  Умеренно высокая  |
 |    Segment Anything Model (SAM)      |    State-of-the-art   |    Очень низкая   |    Очень высокая   | 
 
-Исходя из таблице выше выбор пал на YOLOv11-seg.
+Исходя из таблице выше выбор пал на ``YOLOv11-seg``.
 
 ------------------------------------------------------
 
