@@ -55,32 +55,35 @@
 
 ## Результаты обучения
 Пример выполнения инстанс сегментации обученой модели:
-#### Позвонки шейного отдела(С1-С7)
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/data/result/0111122_png.rf.19859110a93dc0f021a332e1ff17fe56.jpg_result.jpg "Шейный отдел")
-#### Позвонки грудного и поясничного отделов(T1-T12, L1-L5)
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/data/result/01-July-2019-83_jpg.rf.9f3e9abbe168061df8dc544b1646af54.jpg_result.jpg "Грудной и поясничный отделы")
+|**Позвонки шейного отдела(С1-С7)**|**Позвонки грудного и поясничного отделов(T1-T12, L1-L5)**|
+|:----------------------------------:|:-------------------------------------------------------:|
+|![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/data/result/0111122_png.rf.19859110a93dc0f021a332e1ff17fe56.jpg_result.jpg "Шейный отдел")|![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/data/result/01-July-2019-83_jpg.rf.9f3e9abbe168061df8dc544b1646af54.jpg_result.jpg "Грудной и поясничный отделы")|
+
 ## Анализ метрик после обучения модели
-### BoxP
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxP_curve.png "BoxP curve")
+### Предсказание(Precision)
+| **BoxP** | **MaskP** |
+|:---------:|:----------:|
+|![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxP_curve.png "BoxP curve") | ![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxP_curve.png "BoxP curve") |
+|Предсказание для прямоуголников по всем классам равно 1.00 при уверенности 0.943, однако, как видно из графика, некоторые классов при определённой уверености(`от 0.83 до 0.92`) будут предсказываться значительно хуже.| Предсказание для сегментации по всем классам равно 1.00 при уверенности 0.943, однако, как видно из графика, некоторые классов при определённой уверености(`от 0.83 до 0.92`) будут предсказываться значительно хуже.|
 
-### BoxR
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxR_curve.png "BoxR curve")
+### Полнота(Recall)
+| **BoxR** | **MaskR** |
+|:---------:|:----------:|
+|![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxR_curve.png "BoxR curve") | ![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/MaskR_curve.png "MaskR curve") |
+| Полнота для прямоугольников по всем классам равна 0.98 при уверенности 0.00, исследуя график дальше можно заметить, что с ростом уверености, падает полнота и при уверенности 1.00, полнота равна 0.00. Оптимальным значением данного графика будет являтся полнота = 0.7 и увренность = 0.7 | Полнота для сегментации по всем классам равна 0.97 при уверенности 0.00, исследуя график дальше можно заметить, что с ростом уверености, падает полнота и при уверенности 1.00, полнота равна 0.00. Оптимальным значением данного графика будет являтся полнота = 0.7 и увренность = 0.7|
 
-### BoxPR
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxPR_curve.png "BoxPR curve")
+### Компромисс предсказания и полноты(Precision-Recall)
+| **BoxPR** | **MaskPR** |
+|:---------:|:----------:|
+|![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxPR_curve.png "BoxPR curve") | ![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/MaskPR_curve.png "MaskPR curve")|
 
-### BoxF1
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxF1_curve.png "BoxF1 curve")
 
-### MaskP
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/MaskP_curve.png "MaskP curve")
+| **BoxF1** | **MaskF1** |
+|:---------:|:----------:|
+|![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/BoxF1_curve.png "BoxF1 curve") | ![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/MaskF1_curve.png "MaskF1 curve") |
 
-### MaskR
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/MaskR_curve.png "MaskR curve")
 
-### MaskPR
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/MaskPR_curve.png "MaskPR curve")
 
-### MaskF1
-![alt text](https://github.com/mansvlx/X-ray-spine-instance-segmentation/blob/main/train%20result/MaskF1_curve.png "MaskF1 curve")
+
+
 
